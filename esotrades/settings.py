@@ -23,6 +23,7 @@ DEFAULT_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'trades',
+    'home',
 )
 
 THIRD_PARTY_APPS = (
