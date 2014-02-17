@@ -22,7 +22,7 @@ DEFAULT_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'esotrades',
+    'trades',
 )
 
 THIRD_PARTY_APPS = (
