@@ -15,15 +15,22 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # Application definition
 
-INSTALLED_APPS = (
+DEFAULT_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'south',
     'esotrades',
+)
+
+THIRD_PARTY_APPS = (
+    'south',
+)
+
+LOCAL_APPS = (
+    # Define these in local_settings.py
 )
 
 MIDDLEWARE_CLASSES = (
@@ -59,7 +66,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Import database details and all local config from local_settings.py
+
 try:
   from local_settings import *
 except ImportError:
   pass
+
+INSTALLED_APPS = DEFAULT_APPS + THIRD_PARTY_APPS + LOCAL_APPS
