@@ -32,6 +32,7 @@ DEFAULT_APPS = (
 THIRD_PARTY_APPS = (
     'south',
     'bootstrap3',
+    'registration',
 )
 
 LOCAL_APPS = (
@@ -83,6 +84,9 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
 )
+
+# One-week activation window;
+ACCOUNT_ACTIVATION_DAYS = 7
 
 # Import database details and all local config from local_settings.py
 
