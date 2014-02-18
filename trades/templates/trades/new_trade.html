@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}<h1>New Trade</h1>{% endblock %}
+
+{% block content %}
+    {% if error_message %}{{ error_message }}{% endif %}
+
+    <form action="{% url 'trades:new_trade' %}" method="post">
+
+        {% csrf_token %}
+        {% for hidden in form.hidden_fields %}
+            {{ hidden }}
+        {% endfor %}
+
+        {% for field in form.visible_fields %}
+            {{ field.errors }}
+            {{ field.help_text}}
+            {{ field }}
+        {% endfor %}
+
+    <input type="submit" value="Submit" />
+    </form>
+{% endblock content %}

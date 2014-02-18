@@ -12,4 +12,6 @@
     {% else %}
         <p>No trades found!</p>
     {% endif %}
+
+    <a href="{% url 'trades:new_trade' %}">New Trade</a>
 {% endblock content %}

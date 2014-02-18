@@ -4,6 +4,7 @@ from django.core.urlresolvers import reverse
 from django.views import generic
 
 from trades.models import Trade
+from trades.forms import TradeForm
 
 class IndexView(generic.ListView):
     template_name = 'trades/index.html'
@@ -16,5 +17,7 @@ class DetailView(generic.DetailView):
     model = Trade
     template_name = 'trades/detail.html'
 
-def new(request):
-    pass
+class CreateView(generic.CreateView):
+    form_class = TradeForm
+    template_name = 'trades/new_trade.html'
+    success_url = '/trades'

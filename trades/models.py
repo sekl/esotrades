@@ -5,7 +5,7 @@ class Trade(models.Model):
     title = models.CharField(max_length=255)
     body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
-    owner = models.ForeignKey(User, blank=False, null=True, unique=True)
+    owner = models.ForeignKey(User, blank=False, null=True)
 
     def __unicode__(self):
         return self.title
