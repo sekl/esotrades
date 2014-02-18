@@ -27,6 +27,7 @@ DEFAULT_APPS = (
     'django.contrib.staticfiles',
     'trades',
     'pages',
+    'userprofiles',
 )
 
 THIRD_PARTY_APPS = (
@@ -87,6 +88,8 @@ TEMPLATE_LOADERS = (
 
 # One-week activation window;
 ACCOUNT_ACTIVATION_DAYS = 7
+
+LOGIN_REDIRECT_URL = '/'
 
 # Import database details and all local config from local_settings.py
 
