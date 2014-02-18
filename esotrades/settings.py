@@ -11,7 +11,10 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
+PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
+CURRENT_DIR = os.path.dirname(__file__)
+TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'media'),)
 
 # Application definition
 
@@ -28,6 +31,7 @@ DEFAULT_APPS = (
 
 THIRD_PARTY_APPS = (
     'south',
+    'bootstrap3',
 )
 
 LOCAL_APPS = (
@@ -64,8 +68,21 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
-
+MEDIA_ROOT = 'media/'
+MEDIA_URL = 'media/'
+STATIC_ROOT = 'static/'
 STATIC_URL = '/static/'
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
+
+# List of callables that know how to import templates from various sources.
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)
 
 # Import database details and all local config from local_settings.py
 

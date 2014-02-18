@@ -1,9 +1,15 @@
-{% if latest_trades_list %}
-    <ul>
-        {% for trade in latest_trades_list %}
-            <li><a href="{% url 'trades:detail' trade.id %}">{{ trade.title }}</a></li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <p>No trades found!</p>
-{% endif %}
+{% extends "_base.html" %}
+
+{% block title %}Latest Trades{% endblock title %}
+
+{% block content %}
+    {% if latest_trades_list %}
+        <ul>
+            {% for trade in latest_trades_list %}
+                <li><a href="{% url 'trades:detail' trade.id %}">{{ trade.title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No trades found!</p>
+    {% endif %}
+{% endblock content %}
