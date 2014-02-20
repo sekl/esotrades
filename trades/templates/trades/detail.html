@@ -3,5 +3,12 @@
 {% block title %}Trade{% endblock title %}
 
 {% block content %}
-    {{ trade }}
+    {{ trade.title }}<br />
+    {{ trade.server }}<br />
+    {{ trade.category }}<br />
+    {{ trade.type }}<br />
+    {{ trade.duration }}<br />
+    {{ trade.start_price }}<br />
+    {{ trade.buyout_price }}<br />
+    {{ trade.body }}<br />
 {% endblock content %}
