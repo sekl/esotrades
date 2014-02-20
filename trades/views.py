@@ -21,3 +21,10 @@ class CreateView(generic.CreateView):
     form_class = TradeForm
     template_name = 'trades/new_trade.html'
     success_url = '/trades'
+
+    def form_valid(self, form):
+        if form.is_valid():
+            trade = form.save(commit=False)
+            trade.owner = self.request.user
+            trade.save()
+        return super(CreateView, self).form_valid(form)
