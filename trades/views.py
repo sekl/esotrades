@@ -11,7 +11,7 @@ class IndexView(generic.ListView):
     context_object_name = 'latest_trades_list'
 
     def get_queryset(self):
-        return Trade.objects.order_by('created')[:10]
+        return Trade.objects.order_by('-created')[:10]
 
 class DetailView(generic.DetailView):
     model = Trade
