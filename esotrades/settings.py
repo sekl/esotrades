@@ -34,6 +34,7 @@ THIRD_PARTY_APPS = (
     'south',
     'bootstrap3',
     'registration',
+    'haystack',
 )
 
 LOCAL_APPS = (
@@ -85,6 +86,17 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
 )
+
+# Haystack settings for elasticsearch
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
+        'URL': 'http://127.0.0.1:9200/',
+        'INDEX_NAME': 'haystack',
+    },
+}
+
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 # One-week activation window;
 ACCOUNT_ACTIVATION_DAYS = 7

@@ -1,3 +1,4 @@
+import datetime
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -12,6 +13,7 @@ class Trade(models.Model):
     server = models.ForeignKey('Server', blank=False, null=True)
     category = models.ForeignKey('Category', blank=False, null=True)
     trade_type = models.ForeignKey('TradeType', blank=False, null=True)
+    trade_start_time = models.DateTimeField(blank=False, default=datetime.datetime.now)
     trade_duration = models.ForeignKey('TradeDuration', blank=False, null=True)
 
     def __unicode__(self):

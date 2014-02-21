@@ -15,6 +15,7 @@ class TradeForm(forms.ModelForm):
         queryset=Category.objects.all(),
         label='Category:',
     )
+    trade_start_time = forms.DateTimeField()
     trade_duration = forms.ModelChoiceField(
         queryset=TradeDuration.objects.all(),
         label='Duration:',
