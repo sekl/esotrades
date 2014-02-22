@@ -1,0 +1,8 @@
+<h2>Latest Trades</h2>
+<ul class="latest_trades">
+{% for trade in trades %}
+    <li><a href="{% url 'trades:detail' trade.id %}">{{ trade }}</a></li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'trades:index' %}">View all trades</a>

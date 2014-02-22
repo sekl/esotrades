@@ -1,9 +1,23 @@
 {% extends "base.html" %}
 
-{% block title %}This is home!{% endblock title %}
+{% load latest_trades %}
+
+{% block title %}Elder Scrolls Online Trades &amp; Auctions{% endblock title %}
 
 {% block content %}
-
-    <p class="lead">Bacon ipsum dolor sit amet tenderloin chuck jowl, drumstick pork loin kevin andouille tri-tip. Turkey biltong sirloin, tongue rump pork belly t-bone tail sausage venison corned beef. Jerky pig shoulder beef, tri-tip turducken kevin ribeye prosciutto spare ribs.</p>
-
+    <form method="get" action="{% url 'haystack_search' %}" class="form-inline" role="form">
+        {% csrf_token %}
+            <div class="input-group col-lg-6 center">
+                <input type="text" class="form-control" name="q">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">Search</button>
+                </span>
+            </div>
+    </form>
 {% endblock content %}
+
+{% block subcontent %}
+    <div class="well col-md-4">{% latest_trades %}</div>
+    <div class="well col-md-4">asd</div>
+    <div class="well col-md-4">asd</div>
+{% endblock subcontent %}
