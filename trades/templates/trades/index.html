@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
-{% block title %}Latest Trades{% endblock title %}
+{% block title %}Trades{% endblock title %}
 
 {% block content %}
-    {% if latest_trades_list %}
+    {% if trades_list %}
         <ul>
-            {% for trade in latest_trades_list %}
+            {% for trade in trades_list %}
                 <li><a href="{% url 'trades:detail' trade.id %}">{{ trade.title }}</a></li>
             {% endfor %}
         </ul>

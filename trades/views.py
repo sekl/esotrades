@@ -8,10 +8,10 @@ from trades.forms import TradeForm
 
 class IndexView(generic.ListView):
     template_name = 'trades/index.html'
-    context_object_name = 'latest_trades_list'
+    context_object_name = 'trades_list'
 
     def get_queryset(self):
-        return Trade.objects.order_by('-created')[:10]
+        return Trade.objects.order_by('-created')
 
 class DetailView(generic.DetailView):
     model = Trade
