@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
-{% block title %}Trades{% endblock title %}
-
 {% block content %}
+    <h1>{% block title %}Trades{% endblock title %}</h1>
+
     {% if trades_list %}
         <ul>
             {% for trade in trades_list %}

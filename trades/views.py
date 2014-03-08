@@ -6,6 +6,7 @@ from django.views import generic
 from trades.models import Trade
 from trades.forms import TradeForm
 
+
 class IndexView(generic.ListView):
     template_name = 'trades/index.html'
     context_object_name = 'trades_list'
@@ -13,9 +14,11 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         return Trade.objects.order_by('-created')
 
+
 class DetailView(generic.DetailView):
     model = Trade
     template_name = 'trades/detail.html'
+
 
 class CreateView(generic.CreateView):
     form_class = TradeForm

@@ -8,6 +8,7 @@ from models import Trade, Category, TradeType, TradeDuration, Server, Item
 
 
 class TradeFactory(factory.django.DjangoModelFactory):
+
     FACTORY_FOR = Trade
 
     title = factory.Sequence(lambda n: 'test_trade%d' % n)
@@ -32,25 +33,30 @@ class UserFactory(factory.django.DjangoModelFactory):
     username = factory.Sequence(lambda n: 'testuser%d' % n)
     email = factory.Sequence(lambda n: 'testuser%d@example.com' % n)
 
+
 class CategoryFactory(factory.django.DjangoModelFactory):
     FACTORY_FOR = Category
 
     title = factory.Sequence(lambda n: 'test_Category%d' % n)
+
 
 class TradeTypeFactory(factory.django.DjangoModelFactory):
     FACTORY_FOR = TradeType
 
     title = factory.Sequence(lambda n: 'test_TradeType%d' % n)
 
+
 class TradeDurationFactory(factory.django.DjangoModelFactory):
     FACTORY_FOR = TradeDuration
 
     title = factory.Sequence(lambda n: 'test_TradeDuration%d' % n)
 
+
 class ItemFactory(factory.django.DjangoModelFactory):
     FACTORY_FOR = Item
 
     title = factory.Sequence(lambda n: 'test_Item%d' % n)
+
 
 class ServerFactory(factory.django.DjangoModelFactory):
     FACTORY_FOR = Server

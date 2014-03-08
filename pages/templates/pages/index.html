@@ -2,9 +2,9 @@
 
 {% load latest_trades %}
 
-{% block title %}Elder Scrolls Online Trades &amp; Auctions{% endblock title %}
-
 {% block content %}
+    <h1>{% block title %}Elder Scrolls Online Trades &amp; Auctions{% endblock title %}</h1>
+
     <form method="get" action="{% url 'haystack_search' %}" class="form-inline" role="form">
         {% csrf_token %}
             <div class="input-group col-lg-6 center">

@@ -1,6 +1,7 @@
 from django import forms
 from trades.models import Trade, Category, Server, TradeType, TradeDuration
 
+
 class TradeForm(forms.ModelForm):
     title = forms.CharField(max_length=255, label='Title:')
     server = forms.ModelChoiceField(

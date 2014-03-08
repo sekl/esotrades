@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Trade(models.Model):
     title = models.CharField(max_length=255)
     body = models.TextField()
@@ -17,11 +18,13 @@ class Trade(models.Model):
     def __unicode__(self):
         return self.title
 
+
 class Category(models.Model):
     title = models.CharField(max_length=255)
 
     def __unicode__(self):
         return self.title
+
 
 class Item(models.Model):
     title = models.CharField(max_length=255)
